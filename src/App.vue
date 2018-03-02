@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <canvas />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import canvas from '@/lib/canvas'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+  },
+  methods: {
+    changePenColor(color) {
+      canvas.changePenColor(color)
+    },
+    changePenWidth(width) {
+      canvas.changePenWidth(width)
+    },
+    changePenStyle(style) {
+      canvas.changePenStyle(style)
+    }
+  },
+  mounted () {
+    canvas.start()
   }
 }
 </script>
@@ -24,5 +36,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+canvas {
+  width: 800px;
+  height: 450px;
+  border: 1px solid #ddd;
 }
 </style>
