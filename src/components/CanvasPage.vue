@@ -6,6 +6,7 @@
 
 <script>
 import canvas from "@/lib/canvas"
+import ws from "@/lib/websocket"
 
 export default {
   name: "Canvas",
@@ -37,7 +38,24 @@ export default {
   },
   methods: {},
   mounted() {
+    ws.start()
     canvas.start()
+
+    ws.socket.on('change', (payload) => {
+      switch (payload.prop) {
+        case 'width':
+          this.penWidth = payload.value
+          break;
+        case 'color':
+          this.penColor = payload.value
+          break;
+        case 'style':
+          this.penStyle = payload.value
+          break;
+        default:
+          break;
+      }
+    })
   }
 }
 </script>
