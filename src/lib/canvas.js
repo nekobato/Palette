@@ -44,15 +44,12 @@ export default {
     }
   },
   changePenColor(color) {
-    this.dottedLinePath.strokeColor = color
     this.strokeColor = color
   },
   changePenWidth(width) {
-    this.dottedLinePath.strokeWidth = width
     this.strokeWidth = width
   },
   changePenStyle(dashStyle) {
-    this.dottedLinePath.dashArray = dashStyle
     this.dashArray = dashStyle
   }
 }

@@ -1,15 +1,15 @@
 <template>
   <div class="palette">
+    <div class="group-title">PenWidth</div>
     <div class="button-group">
-      <span>PenWidth</span>
       <button @click="changePenWidth(1)">1</button>
       <button @click="changePenWidth(2)">2</button>
       <button @click="changePenWidth(3)">3</button>
       <button @click="changePenWidth(4)">4</button>
       <button @click="changePenWidth(5)">5</button>
     </div>
+    <div class="group-title">PenColor</div>
     <div class="button-group">
-      <span>PenColor</span>
       <button class="color-button" @click="changePenColor('#000')" style="background: #000"></button>
       <button class="color-button" @click="changePenColor('#f00')" style="background: #f00"></button>
       <button class="color-button" @click="changePenColor('#0f0')" style="background: #0f0"></button>
@@ -49,18 +49,16 @@ export default {
 </script>
 
 <style scoped>
-.button-group {
+.group-title {
   margin: 16px auto 0;
 }
 button {
   margin: 0 0 0 4px;
+  width: 48px;
+  height: 48px;
   border: 1px solid #ddd;
   background: #ddd;
   color: #444;
   cursor: pointer;
-}
-.color-button {
-  width: 24px;
-  height: 24px;
 }
 </style>
